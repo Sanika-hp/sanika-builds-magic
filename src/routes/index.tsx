@@ -47,7 +47,7 @@ function Index() {
   useEffect(() => {
     let i = 0;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key.toLowerCase() === KONAMI[i].toLowerCase()) {
+      if (e.key.toLowerCase() === (KONAMI[i] ?? "").toLowerCase()) {
         i++;
         if (i === KONAMI.length) {
           i = 0;

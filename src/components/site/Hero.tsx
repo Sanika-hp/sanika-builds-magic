@@ -32,7 +32,7 @@ export function Hero() {
     const next = clicks + 1;
     setClicks(next);
     const lines = ["Beep. Please stop poking me.", "You again?", "Okay okay, you found me. 😭"];
-    setBubble(lines[Math.min(next, 3) - 1]);
+    setBubble(lines[Math.min(next, 3) - 1] ?? null);
     window.setTimeout(() => setBubble(null), 2600);
   };
 
