@@ -231,7 +231,7 @@ Display:
 **My Code Lives Here 👨‍💻**
 
 GitHub:
-https://github.com/Sanika-hp/anime_website.git
+https://github.com/Sanika-hp/anime_website
 
 Add a button:
 
