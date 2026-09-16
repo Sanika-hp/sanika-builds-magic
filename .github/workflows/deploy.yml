@@ -26,14 +26,13 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base=/${{ github.event.repository.name }}/
 
-      - name: Check build output
+      - name: Prepare output
         run: |
-          echo "Checking build output..."
-          ls -la
-          echo "Checking .output/public..."
-          ls -la .output/public
+          ls -la dist/client
+          touch dist/client/.nojekyll
+          cp dist/client/index.html dist/client/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -41,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: dist/client
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
