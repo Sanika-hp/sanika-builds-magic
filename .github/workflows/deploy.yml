@@ -34,7 +34,7 @@ jobs:
            echo "Checking build output..."
            ls -la
            echo "Checking dist..."
-           ls -la .dist
+           ls -la dist
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .dist
+          path: dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
