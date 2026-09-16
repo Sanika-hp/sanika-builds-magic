@@ -27,7 +27,14 @@ jobs:
 
       - name: Build
         run: npm run build
-
+        
+      -name: Check dist folder
+        run: |
+          echo "Checking build output..."
+          ls -la
+          echo "Checking dist..."
+          ls -la dist
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
