@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "motion/react";
 import { ArrowDown, Sparkles } from "lucide-react";
-import robot from "@/assets/robot.png";
+import robot from "@/assets/robot.png?inline";
 
 const words = ["Hi,", "I'm", "Sanika", "H", "P", "👋"];
 

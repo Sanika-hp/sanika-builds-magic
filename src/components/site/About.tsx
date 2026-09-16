@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { Reveal, SectionTitle } from "./Reveal";
-import student from "@/assets/student-laptop.png";
+import student from "@/assets/student-laptop.png?inline";
 
 function Counter({ to, suffix = "", label }: { to: number; suffix?: string; label: string }) {
   const ref = useRef<HTMLDivElement>(null);
