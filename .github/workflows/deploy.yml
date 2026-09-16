@@ -2,8 +2,7 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -29,17 +28,12 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Fix GitHub Pages asset paths
-        run: |
-         find .output/public -type f \( -name "*.html" -o -name "*.js" -o -name "*.css" \) -print0 | xargs -0 sed -i 's|/assets/|/sanika-builds-magic/assets/|g'
-         find .output/public -type f -name "*.html" -print0 | xargs -0 sed -i 's|="/|="/sanika-builds-magic/|g'
-
       - name: Check build output
         run: |
-           echo "Checking build output..."
-           ls -la
-           echo "Checking .output/public..."
-           ls -la .output/public
+          echo "Checking build output..."
+          ls -la
+          echo "Checking .output/public..."
+          ls -la .output/public
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
