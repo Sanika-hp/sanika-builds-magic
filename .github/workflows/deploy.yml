@@ -29,12 +29,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Check generated files
+      - name: Fix GitHub Pages paths
         run: |
-         echo "===== PUBLIC FILES ====="
-         find .output/public -maxdepth 2 -type f
-         echo "===== INDEX HTML ====="
-         cat .output/public/index.html
+         sed -i 's|href="/assets/|href="/sanika-builds-magic/assets/|g' .output/public/index.html
+          sed -i 's|src="/assets/|src="/sanika-builds-magic/assets/|g' .output/public/index.html
 
       - name: Check build output
         run: |
