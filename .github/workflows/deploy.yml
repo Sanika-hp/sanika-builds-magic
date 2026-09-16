@@ -29,10 +29,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Fix GitHub Pages paths
+      - name: Fix GitHub Pages asset paths
         run: |
-         sed -i 's|href="/assets/|href="/sanika-builds-magic/assets/|g' .output/public/index.html
-          sed -i 's|src="/assets/|src="/sanika-builds-magic/assets/|g' .output/public/index.html
+         find .output/public -type f \( -name "*.html" -o -name "*.js" -o -name "*.css" \) -print0 | xargs -0 sed -i 's|/assets/|/sanika-builds-magic/assets/|g'
 
       - name: Check build output
         run: |
