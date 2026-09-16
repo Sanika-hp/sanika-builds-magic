@@ -29,6 +29,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Check generated files
+        run: |
+         echo "===== PUBLIC FILES ====="
+         find .output/public -maxdepth 2 -type f
+         echo "===== INDEX HTML ====="
+         cat .output/public/index.html
+
       - name: Check build output
         run: |
            echo "Checking build output..."
